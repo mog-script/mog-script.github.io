@@ -1,0 +1,32 @@
+{
+  "name": "mog-script.github.io",
+  "version": "1.0.0",
+  "description": "Website for M.O.G.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:lint && npm run test:typecheck && npm run test:unit",
+    "build": "sagui build",
+    "develop": "sagui develop --port 3000",
+    "dist": "cross-env NODE_ENV=production sagui build --optimize",
+    "start": "npm run develop",
+    "test:coverage": "npm run test:unit -- --coverage",
+    "test:lint": "sagui lint",
+    "test:typecheck": "sagui typecheck",
+    "test:unit": "cross-env NODE_ENV=test sagui test",
+    "test:unit:watch": "npm run test:unit -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mog-script/mog-script.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mog-script/mog-script.github.io/issues"
+  },
+  "homepage": "https://github.com/mog-script/mog-script.github.io#readme",
+  "dependencies": {
+    "sagui": "^7.0.2"
+  }
+}
