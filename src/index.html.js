@@ -21,7 +21,7 @@ module.exports = function ({ htmlWebpackPlugin }) {
         <meta property="og:image" content="http://mog-script.js.org/${image}" />
       </head>
       <body>
-        <div id="mog-script">${renderToString(<LandingPage />)}</div>
+        <div id="mog-script.github.io">${renderToString(<LandingPage />)}</div>
       </body>
     </html>
   `)

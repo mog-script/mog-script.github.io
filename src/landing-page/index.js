@@ -1,9 +1,14 @@
 import React from 'react'
+import SideBySide from '../side-by-side'
 import logo from './mog-script-logo.png'
 
 export default function LandingPage () {
   return <main>
     <img className='logo' src={logo} />
+
+    <h2>Try it out!</h2>
+    <SideBySide />
+
     <h2>Standalone</h2>
     <code>npm install -g mog-script</code>
 

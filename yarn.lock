@@ -3640,15 +3640,15 @@ mkdirp@0.5.0:
   dependencies:
     minimist "0.0.8"
 
+mog-script, mog-script@latest:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/mog-script/-/mog-script-0.2.0.tgz#a17eee6c6d08b19872aa025a6669180b0b56d707"
+
 mog-script-loader:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/mog-script-loader/-/mog-script-loader-0.0.1.tgz#4fc6cc70857d1f93aaa2ae6c61678bb3bb1f01f9"
   dependencies:
     mog-script latest
-
-mog-script@latest:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/mog-script/-/mog-script-0.2.0.tgz#a17eee6c6d08b19872aa025a6669180b0b56d707"
 
 ms@0.7.1:
   version "0.7.1"

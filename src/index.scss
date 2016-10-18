@@ -23,3 +23,22 @@ code + h2 {
 code + img {
   margin-top: 60px;
 }
+
+textarea {
+  background-color: rgb(40, 43, 52);
+  border: 0;
+  color: white;
+  font-family: monospace;
+  font-size: 1rem;
+  height: 800px;
+  padding: 1rem;
+  width: 400px;
+}
+
+textarea + textarea {
+  margin-left: 1rem;
+}
+
+textarea:focus {
+  outline: none;
+}
