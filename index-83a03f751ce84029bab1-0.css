@@ -1,0 +1,47 @@
+body {
+  background-color: #2a7c9e;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+code {
+  background-color: #282b34;
+  padding: 1rem 2rem;
+}
+
+code + h2 {
+  margin-top: 3rem;
+}
+
+code + img {
+  margin-top: 60px;
+}
+
+textarea {
+  background-color: #282b34;
+  border: 0;
+  color: white;
+  font-family: monospace;
+  font-size: 1rem;
+  height: 800px;
+  padding: 1rem;
+  width: 400px;
+}
+
+textarea + textarea {
+  margin-left: 1rem;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+
+/*# sourceMappingURL=index-83a03f751ce84029bab1-0.css.map*/
