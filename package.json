@@ -27,6 +27,9 @@
   },
   "homepage": "https://github.com/mog-script/mog-script.github.io#readme",
   "dependencies": {
+    "mog-script-loader": "^0.0.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "sagui": "^7.0.2"
   }
 }
