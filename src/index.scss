@@ -1,8 +1,13 @@
+$small-content-width: 93%;
+$big-content-width: 800px;
+$break-big: 800px;
+
 body {
-  background-color: rgb(42, 124, 158);
-  color: white;
+  padding: 0;
+  background-color: white;
+  color: rgb(40, 43, 52);
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -12,8 +17,9 @@ img {
 }
 
 code {
+  color: white;
   background-color: rgb(40, 43, 52);
-  padding: 1rem 2rem;
+  padding: .5rem;
 }
 
 code + h2 {
@@ -30,15 +36,48 @@ textarea {
   color: white;
   font-family: monospace;
   font-size: 1rem;
-  height: 800px;
-  padding: 1rem;
-  width: 400px;
-}
+  width: $small-content-width;
+  height: 500px;
+  padding: 10px;
+  box-sizing: border-box;
 
-textarea + textarea {
-  margin-left: 1rem;
+  @media screen and (min-width: $break-big) {
+    width: $big-content-width / 2;
+
+    &:first-of-type {
+      border-right: 1px solid white;
+    }
+  }
 }
 
 textarea:focus {
   outline: none;
+}
+
+.bg-emojis {
+  position:fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  font-size: 3vw;
+}
+
+.content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  text-align: center;
+  padding-top: 38vw;
+  @media screen and (min-width: $break-big) {
+  }
+
+}
+
+.mog-script-gif {
+  width: $small-content-width;
+  @media screen and (min-width: $break-big) {
+    width: $big-content-width;
+  }
 }
