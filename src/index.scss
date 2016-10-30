@@ -69,6 +69,25 @@ a {
   }
 }
 
+table {
+  width: 100%;
+  font-weight: bold;
+
+  .keyword {
+    font-size: 10px;
+  }
+
+  td {
+    width: 10%;
+  }
+
+  @media screen and (min-width: $big-content-width) {
+    .keyword {
+      font-size: 1em;
+    }
+  }
+}
+
 .background-emojis {
   position:fixed;
   top: 0;

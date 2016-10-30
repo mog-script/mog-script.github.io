@@ -18,17 +18,17 @@ export default class SideBySide extends Component {
     return <div>
       <textarea
         onChange={(e) => this.setState({
-          javascript: compile(e.target.value),
-          mogscript: e.target.value
-        })}
-        value={mogscript}
-      />
-      <textarea
-        onChange={(e) => this.setState({
           javascript: e.target.value,
           mogscript: decompile(e.target.value)
         })}
         value={javascript}
+      />
+      <textarea
+        onChange={(e) => this.setState({
+          javascript: compile(e.target.value),
+          mogscript: e.target.value
+        })}
+        value={mogscript}
       />
     </div>
   }
