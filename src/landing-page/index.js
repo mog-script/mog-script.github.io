@@ -1,6 +1,7 @@
 import React from 'react'
 import SideBySide from '../side-by-side'
 import EmojisBackground from '../emojis-background'
+import preloaderExample from './webpack-preloader-example.txt'
 
 export default function LandingPage () {
   return <div>
@@ -16,7 +17,10 @@ export default function LandingPage () {
           </section>
           <section>
             <h2>Webpack loader</h2>
+            <p>If you like how the emojified code looks, keep it and let webpack transpile it into standard JavaScript. Install the webpack loader.</p>
             <code>npm install mog-script-loader</code>
+            <p>Add it as preloader in your webpack configuration. And ship the emojis :)</p>
+            <textarea disabled className='preloader-example'>{preloaderExample}</textarea>
           </section>
           <section>
             <h2>Atom package</h2>

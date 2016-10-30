@@ -11,11 +11,9 @@ body {
 }
 
 h2 {
-  margin: 10px 0 20px;
-  font-size: 20px;
-  color: white;
-  padding: 10px;
-  background-color: #282b34;
+  margin: 20px 0 10px 0;
+  font-size: 30px;
+  color: #282b34;
 }
 
 img {
@@ -57,7 +55,7 @@ textarea:focus {
 }
 
 section {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 a {
@@ -111,10 +109,23 @@ a {
 }
 
 .instructions {
-  box-shadow: 0px 0px 30px 20px rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 30px 20px rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 
   p {
     text-align: left;
   }
+
+  @media screen and (min-width: $big-content-width) {
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.preloader-example {
+  width: 245px;
+  height: 100px;
+  background-color: #282b34;
+  overflow: hidden;
 }
