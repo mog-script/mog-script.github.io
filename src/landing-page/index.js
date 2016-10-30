@@ -1,21 +1,37 @@
 import React from 'react'
 import SideBySide from '../side-by-side'
+import EmojisBackground from '../emojis-background'
 
 export default function LandingPage () {
   return <div>
-    <h2>Try it out!</h2>
-    <SideBySide />
-
-    <h2>Standalone</h2>
-    <code>npm install -g mog-script</code>
-
-    <h2>Webpack loader</h2>
-    <code>npm install mog-script-loader</code>
-
-    <h2>Atom plugin</h2>
-    <code>apm install atom-mog-script-snippets</code>
-    <img className='mog-script-gif'
-      src='https://raw.githubusercontent.com/mog-script/atom-mog-script-snippets/master/_images/mog-script-snippets-example.gif'
-    />
+    <div className='background-emojis' dangerouslySetInnerHTML={EmojisBackground()} />
+    <div className='content-wrapper'>
+      <div className='content'>
+        <h2>Try it out!</h2>
+        <SideBySide />
+        <div className='instructions'>
+          <section>
+            <h2>Standalone</h2>
+            <code>npm install -g mog-script</code>
+          </section>
+          <section>
+            <h2>Webpack loader</h2>
+            <code>npm install mog-script-loader</code>
+          </section>
+          <section>
+            <h2>Atom package</h2>
+            <p>
+              Install this <a href='https://atom.io/packages/mog-script-snippets' target='_blank'>mog-script-snippets</a> package from the atom package manager or from terminal
+            </p>
+            <code>apm install atom-mog-script-snippets</code>
+            <p>Once installed, you can convert the JavaScript keywords in your code into emojis by using the following keybindings</p>
+            <h3>JS 👉 Emoji</h3>
+            <code>ctrl+alt+e</code>
+            <h3>Emoji 👉 JS</h3>
+            <code>ctrl+alt+k</code>
+          </section>
+        </div>
+      </div>
+    </div>
   </div>
 }
