@@ -17,6 +17,7 @@ export default class SideBySide extends Component {
 
     return <div>
       <textarea
+        onKeyDown={handleKeyDown.bind(this)}
         onChange={(e) => this.setState({
           javascript: e.target.value,
           mogscript: decompile(e.target.value)
@@ -24,6 +25,7 @@ export default class SideBySide extends Component {
         value={javascript}
       />
       <textarea
+        disabled
         onChange={(e) => this.setState({
           javascript: compile(e.target.value),
           mogscript: e.target.value
@@ -32,4 +34,23 @@ export default class SideBySide extends Component {
       />
     </div>
   }
+}
+
+function handleKeyDown (e) {
+  if (e.keyCode !== 9) {
+    return
+  }
+  e.preventDefault()
+
+  const target = e.target
+
+  // get caret position/selection
+  const start = target.selectionStart
+  const end = target.selectionEnd
+  const currentValue = target.value
+
+  target.value = `${currentValue.substring(0, start)}  ${currentValue.substring(end)}`
+
+  // put caret at right position again (add one for the tab)
+  target.selectionStart = target.selectionEnd = start + 2
 }
