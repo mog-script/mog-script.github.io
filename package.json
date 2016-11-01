@@ -31,6 +31,7 @@
     "mog-script-loader": "^0.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-highlight": "^0.9.0",
     "sagui": "^7.0.2"
   }
 }

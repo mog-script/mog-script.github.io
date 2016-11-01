@@ -15,8 +15,8 @@ export default function () {
   return (
     <table className='emojis-map'>
       <tbody>
-        {splittedMap.map((row) => {
-          return (<tr>{renderCells(row)}</tr>)
+        {splittedMap.map((row, index) => {
+          return (<tr key={`tr-${index}`}>{renderCells(row)}</tr>)
         })}
       </tbody>
     </table>
@@ -24,9 +24,9 @@ export default function () {
 }
 
 function renderCells (elements) {
-  return elements.map((value) => {
-    return (<td>
-      <div>{value.keyword}</div>
+  return elements.map((value, index) => {
+    return (<td key={`td-${index}`}>
+      <div className='keyword'>{value.keyword}</div>
       <div>{value.emoji}</div>
     </td>)
   })
