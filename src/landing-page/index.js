@@ -1,6 +1,7 @@
 import React from 'react'
 import SideBySide from '../side-by-side'
 import EmojisBackground from '../emojis-background'
+import EmojiMapTable from '../emoji-map-table'
 import preloaderExample from './webpack-preloader-example.txt'
 
 export default function LandingPage () {
@@ -13,74 +14,7 @@ export default function LandingPage () {
         <div className='instructions'>
           <section>
             <h2>Keywords map</h2>
-            <table>
-              <tr>
-                <td className='keyword'>break</td>
-                <td className='keyword'>case</td>
-                <td className='keyword'>catch</td>
-                <td className='keyword'>class</td>
-                <td className='keyword'>const</td>
-                <td className='keyword'>debugger</td>
-                <td className='keyword'>default</td>
-                <td className='keyword'>delete</td>
-              </tr>
-              <tr>
-                <td>⚡️</td>
-                <td>💼</td>
-                <td>🙉</td>
-                <td>💩</td>
-                <td>💎</td>
-                <td>🚧</td>
-                <td>⭐️</td>
-                <td>⛔️</td>
-              </tr>
-            </table>
-            <hr />
-            <table>
-              <tr>
-                <td className='keyword'>else</td>
-                <td className='keyword'>export</td>
-                <td className='keyword'>false</td>
-                <td className='keyword'>for</td>
-                <td className='keyword'>from</td>
-                <td className='keyword'>function</td>
-                <td className='keyword'>if</td>
-                <td className='keyword'>import</td>
-              </tr>
-              <tr>
-                <td>❗️</td>
-                <td>🛳</td>
-                <td>💔</td>
-                <td>🌀</td>
-                <td>👈</td>
-                <td>⚙️</td>
-                <td>❓</td>
-                <td>📦</td>
-              </tr>
-            </table>
-            <hr />
-            <table>
-              <tr>
-                <td className='keyword'>instanceof</td>
-                <td className='keyword'>new</td>
-                <td className='keyword'>return</td>
-                <td className='keyword'>switch</td>
-                <td className='keyword'>throw</td>
-                <td className='keyword'>true</td>
-                <td className='keyword'>try</td>
-                <td className='keyword'>while</td>
-              </tr>
-              <tr>
-                <td>👶</td>
-                <td>✨</td>
-                <td>🎁</td>
-                <td>🚦</td>
-                <td>💥</td>
-                <td>💗</td>
-                <td>🙊</td>
-                <td>👀</td>
-              </tr>
-            </table>
+            <EmojiMapTable />
           </section>
           <section>
             <h2>Standalone</h2>

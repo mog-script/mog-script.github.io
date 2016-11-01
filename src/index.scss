@@ -69,7 +69,7 @@ a {
   }
 }
 
-table {
+table.emojis-map {
   width: 100%;
   font-weight: bold;
 
@@ -79,6 +79,7 @@ table {
 
   td {
     width: 10%;
+    padding-top: 10px;
   }
 
   @media screen and (min-width: $big-content-width) {
