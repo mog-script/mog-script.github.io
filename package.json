@@ -30,6 +30,7 @@
     "mog-script": "^0.2.0",
     "mog-script-loader": "^0.0.1",
     "react": "^15.3.2",
+    "react-codemirror": "^0.2.6",
     "react-dom": "^15.3.2",
     "sagui": "^7.0.2"
   }
