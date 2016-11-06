@@ -1,6 +1,3 @@
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import LandingPage from './landing-page'
 import image from './landing-page/mog-script-logo.png'
 
 module.exports = function ({ htmlWebpackPlugin }) {
@@ -21,7 +18,7 @@ module.exports = function ({ htmlWebpackPlugin }) {
         <meta property="og:image" content="http://mog-script.js.org/${image}" />
       </head>
       <body>
-        <div id="mog-script.github.io">${renderToString(<LandingPage />)}</div>
+        <div id="mog-script.github.io"></div>
       </body>
     </html>
   `)

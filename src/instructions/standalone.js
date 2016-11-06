@@ -1,41 +1,22 @@
 import React from 'react'
-import Highlight from 'react-highlight'
+import Codemirror from 'react-codemirror'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/shell/shell'
+import standaloneExample from './standalone-example.txt'
+
+const codeSnippetConfig = {
+  mode: 'javascript',
+  theme: 'base16-dark',
+  readOnly: true
+}
 
 export default function () {
   return (
     <div>
-      <Highlight className='javascript'>
-        npm install -g mog-script
-      </Highlight>
-      Say you have a M.O.G. file named <code>🍧.💎</code> that contains:
-      <Highlight className='javascript'>
-        {`💎 { createStore } = require('redux')
-
-        💎 reducer = ⚙️ (state, action) {
-          🚦 (action.type) {
-            💼 'INCREMENT':
-              🎁 state + action.payload
-
-            💼 'DECREMENT':
-              🎁 state - action.payload
-          }
-        }
-
-        💎 initialState = 0
-
-        💎 store = createStore(reducer, initialState)
-
-        store.subscribe(⚙️ () { console.log('New value is \${store.getState()}') }
-
-        process.stdin.on('data', ⚙️ (chunk) {
-          ❓ (chunk[0] === '-') {
-            store.dispatch({ type: 'DECREMENT', payload: chunk.slice(1) })
-          } ❗️ {
-            store.dispatch({ type: 'INCREMENT', payload: chunk })
-          }
-        })`}
-      </Highlight>
-      You can run it from the terminal with: <code>💎 🍧.💎</code>
+      <Codemirror className='code-sample' options={{ ...codeSnippetConfig, mode: 'shell' }} value='npm install -g mog-script' />
+      <p>Say you have a M.O.G. file named <code>🍧.💎</code> that contains:</p>
+      <Codemirror className='code-sample' options={codeSnippetConfig} value={standaloneExample} />
+      <p>You can run it from the terminal with: <code>💎 🍧.💎</code></p>
     </div>
   )
 }
