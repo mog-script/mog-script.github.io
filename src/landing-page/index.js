@@ -30,6 +30,8 @@ export default function LandingPage () {
             <h2>Standalone</h2>
             <StandaloneInstructions />
           </section>
+          <hr />
+          <p>🚨 DISCLAMER 🚨<br />Do not use this package on production code! We are not responsible if your boss or colleagues gets 😱 angry 😡 when they see emojis in your JS code 😀 🙃</p>
         </div>
       </div>
     </div>
