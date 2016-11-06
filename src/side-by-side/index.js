@@ -1,6 +1,15 @@
 import React, {Component} from 'react'
-import {compile, decompile} from 'mog-script'
+import {decompile} from 'mog-script'
+import Codemirror from 'react-codemirror'
+import 'codemirror/mode/javascript/javascript'
 import example from './example.txt'
+
+const codeEditorConfig = {
+  mode: 'javascript',
+  theme: 'base16-dark',
+  readOnly: true,
+  tabSize: 2
+}
 
 export default class SideBySide extends Component {
   constructor () {
@@ -16,20 +25,25 @@ export default class SideBySide extends Component {
     const {javascript, mogscript} = this.state
 
     return <div>
-      <textarea
-        onChange={(e) => this.setState({
-          javascript: compile(e.target.value),
-          mogscript: e.target.value
-        })}
-        value={mogscript}
-      />
-      <textarea
-        onChange={(e) => this.setState({
-          javascript: e.target.value,
-          mogscript: decompile(e.target.value)
-        })}
+      <Codemirror
+        className='code-editor'
+        options={{ ...codeEditorConfig, readOnly: false }}
         value={javascript}
+        onChange={handleChange.bind(this)}
+      />
+      <Codemirror
+        className='code-editor'
+        options={codeEditorConfig}
+        value={mogscript}
+        onChange={handleChange.bind(this)}
       />
     </div>
   }
+}
+
+function handleChange (newCode) {
+  this.setState({
+    javascript: newCode,
+    mogscript: decompile(newCode)
+  })
 }

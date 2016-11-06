@@ -1,0 +1,5 @@
+preLoaders: [{
+  test: /\.(jsx?|es6)$/,
+  exclude: ['node_modules'],
+  loader: 'mog-script'
+}]

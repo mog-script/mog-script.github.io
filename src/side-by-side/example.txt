@@ -2,7 +2,7 @@ export default leftpad
 
 function leftpad (str, len, ch) {
   //convert the `str` to String
-  str = str +'';
+  str = str + '';
 
   //needn't to pad
   len = len - str.length;

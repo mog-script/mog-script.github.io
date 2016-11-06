@@ -1,24 +1,38 @@
 import React from 'react'
 import SideBySide from '../side-by-side'
-import logo from './mog-script-logo.png'
+import EmojisBackground from '../emojis-background'
+import EmojiMapTable from '../emoji-map-table'
+import StandaloneInstructions from '../instructions/standalone'
+import AtomPackageInstructions from '../instructions/atom-package'
+import WebpackLoaderInstructions from '../instructions/webpack-loader'
 
 export default function LandingPage () {
-  return <main>
-    <img className='logo' src={logo} />
-
-    <h2>Try it out!</h2>
-    <SideBySide />
-
-    <h2>Standalone</h2>
-    <code>npm install -g mog-script</code>
-
-    <h2>Webpack loader</h2>
-    <code>npm install mog-script-loader</code>
-
-    <h2>Atom plugin</h2>
-    <code>apm install atom-mog-script-snippets</code>
-    <img
-      src='https://raw.githubusercontent.com/mog-script/atom-mog-script-snippets/master/_images/mog-script-snippets-example.gif'
-    />
-  </main>
+  return <div>
+    <div className='background-emojis' dangerouslySetInnerHTML={EmojisBackground()} />
+    <div className='content-wrapper'>
+      <div className='content'>
+        <h2>Try it out!</h2>
+        <SideBySide />
+        <div className='instructions'>
+          <section>
+            <h2>Keywords map</h2>
+            <EmojiMapTable />
+          </section>
+          <section>
+            <h2>Atom package</h2>
+            <AtomPackageInstructions />
+          </section>
+          <section>
+            <h2>Webpack loader</h2>
+            <WebpackLoaderInstructions />
+          </section>
+          <section>
+            <h2>Standalone</h2>
+            <StandaloneInstructions />
+          </section>
+          <p className='disclamer-note'>🚨 DISCLAMER 🚨<br />Do not use this package on production code! We are not responsible if your boss or colleagues gets 😱 angry 😡 when they see emojis in your JS code 😀 🙃</p>
+        </div>
+      </div>
+    </div>
+  </div>
 }
