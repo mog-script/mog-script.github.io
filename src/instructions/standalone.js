@@ -15,7 +15,7 @@ export default function () {
     <div>
       <Codemirror className='code-sample' options={{ ...codeSnippetConfig, mode: 'shell' }} value='npm install -g mog-script' />
       <p>Say you have a M.O.G. file named <code>🍧.💎</code> that contains:</p>
-      <Codemirror className='code-sample' options={codeSnippetConfig} value={standaloneExample} />
+      <Codemirror className={{'code-sample': true, 'left': true}} options={codeSnippetConfig} value={standaloneExample} />
       <p>You can run it from the terminal with: <code>💎 🍧.💎</code></p>
     </div>
   )

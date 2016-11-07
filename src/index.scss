@@ -52,7 +52,17 @@ img {
 .code-sample {
   position: relative;
   display: inline-block;
-  text-align: left;
+  text-align: center;
+  width: 100%;
+  overflow-x: scroll;
+
+  @media screen and (min-width: $big-content-width) {
+    width: auto;
+  }
+
+  &.left {
+    text-align: left;
+  }
 
   .CodeMirror {
     padding: 5px;
@@ -99,14 +109,19 @@ table.emojis-map {
   position:fixed;
   top: 0;
   left: 0;
-  color: rgba(255, 255, 255, 0.13);
+  width: 100%;
   background-color: white;
-  font-size: 3vw;
-  line-height: 3vw;
+  font-size: 2.99vw;
+  line-height: 2.99vw;
 }
 
+.bg-segment {
+  display: inline-block;
+  opacity: 0.13;
+}
 .logo-segment {
-  color: rgba(255, 255, 255, 1);
+  display: inline-block;
+  opacity: 1;
 }
 
 .content-wrapper {
