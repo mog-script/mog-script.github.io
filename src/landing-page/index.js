@@ -11,9 +11,9 @@ export default function LandingPage () {
     <div className='background-emojis' dangerouslySetInnerHTML={EmojisBackground()} />
     <div className='content-wrapper'>
       <div className='content'>
-        <h2>Try it out!</h2>
-        <SideBySide />
         <div className='instructions'>
+          <h2>Try it out!</h2>
+          <SideBySide />
           <section>
             <h2>Keywords map</h2>
             <EmojiMapTable />
