@@ -1,6 +1,40 @@
 $big-content-width: 800px;
 $medium-content-width: 400px;
 
+@-moz-keyframes showUp {
+  0% { opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.13; }
+}
+@-moz-keyframes showUpLogo {
+  0% { opacity: 0; }
+  25% { opacity: 0.6; }
+  75% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes showUp {
+  0% { opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.13; }
+}
+@-webkit-keyframes showUpLogo {
+  0% { opacity: 0; }
+  25% { opacity: 0.6; }
+  75% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+@keyframes showUp {
+  0% { opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.13; }
+}
+@keyframes showUpLogo {
+  0% { opacity: 0; }
+  25% { opacity: 0.6; }
+  75% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
 body {
   padding: 0;
   background-color: white;
@@ -21,8 +55,18 @@ img {
   margin: 0 auto;
 }
 
+.code-editor-container {
+  overflow: auto;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 .code-editor {
-  display: inline-block;
+  float: left;
   background-color: rgba(10, 10, 10, 0.95);
   border: 0;
   color: white;
@@ -52,7 +96,17 @@ img {
 .code-sample {
   position: relative;
   display: inline-block;
-  text-align: left;
+  text-align: center;
+  width: 100%;
+  overflow-x: scroll;
+
+  @media screen and (min-width: $big-content-width) {
+    width: auto;
+  }
+
+  &.left {
+    text-align: left;
+  }
 
   .CodeMirror {
     padding: 5px;
@@ -99,14 +153,46 @@ table.emojis-map {
   position:fixed;
   top: 0;
   left: 0;
-  color: rgba(255, 255, 255, 0.13);
+  width: 100%;
   background-color: white;
-  font-size: 3vw;
-  line-height: 3vw;
+  display: table;
 }
 
-.logo-segment {
-  color: rgba(255, 255, 255, 1);
+.bg-row {
+  display: table-row;
+}
+
+.bg-elem {
+  animation: showUp .8s ease-in-out;
+  opacity: 0.13;
+  display: table-cell;
+  font-size: 1.7vw;
+  line-height: 3.3vw;
+
+  &.logo {
+    animation: showUpLogo .8s ease-in-out;
+    opacity: 1;
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+
+  &.delay-1 {
+    animation-delay: .05s;
+  }
+  &.delay-2 {
+    animation-delay: .15s;
+  }
+  &.delay-3 {
+    animation-delay: .2s;
+  }
+  &.delay-4 {
+    animation-delay: .25s;
+  }
+
+  @media screen and (min-width: $big-content-width) {
+    font-size: 3vw;
+    line-height: 3vw;
+  }
 }
 
 .content-wrapper {
@@ -120,12 +206,12 @@ table.emojis-map {
 .content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 39vw 10px 0 10px;
+  padding: 40vw 10px 0 10px;
   text-align: center;
 
   @media screen and (min-width: $medium-content-width) {
     width: $medium-content-width;
-    padding-top: 42vw;
+    padding-top: 44vw;
   }
 
   @media screen and (min-width: $big-content-width) {

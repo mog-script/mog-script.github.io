@@ -1,4 +1,4 @@
-const emojisMap = ['😞', '😟', '😠', '😔', '😕', '🙁', '🙁', '😕', '☹️', '😣', '😍', '😖', '😫', '😩', '😮', '😯', '😵', '😀', '😬', '😁', '😂', '😃', '😄', '😅', '😆', '😇', '😉', '😊', '🙂', '😋', '😌', '😍', '😘', '😗', '😙', '😚', '😜', '🙃', '😝', '😛', '🤓', '🤑', '😎', '🤗', '😏', '😶', '😐', '😑', '😒', '🙄', '🤔', '😳', '😴', '😒', '🙄', '🤔', '😳', '😘', '😗']
+const emojisMap = ['😍', '😖', '😮', '😯', '😵', '😀', '😬', '😁', '😃', '😄', '😅', '😆', '😇', '😉', '😊', '🙂', '😋', '😌', '😍', '😘', '😗', '🙃', '😛', '🤓', '🤑', '😎', '🤗', '😏', '😶', '😐', '🙄', '🤔', '😴']
 const logoSegments = [
   { 1: [10, 11, 12, 15, 19, 22, 23, 24, 25] },
   { 2: [9, 13, 15, 16, 18, 19, 21] },
@@ -22,15 +22,34 @@ const flatLogoSegments = logoSegments.reduce((arr, line) => {
   return arr.concat(calcIndexes)
 }, [])
 
+const shuffle = (array) => {
+  const newArray = [...array]
+  for (let i = newArray.length - 1; i > 0; i -= 1) {
+    const randomIndex = Math.floor(Math.random() * (i + 1))
+    const temp = newArray[i]
+    newArray[i] = newArray[randomIndex]
+    newArray[randomIndex] = temp
+  }
+  return newArray
+}
+
+const renderEmojis = (emojisArray, currentCounter) => {
+  return emojisArray.map((emoji) => {
+    currentCounter++
+
+    // choose random animation delay number of the 4 prefined in css
+    const randomDelay = Math.floor(Math.random() * 4) + 1
+
+    return flatLogoSegments.indexOf(currentCounter) !== -1
+      ? '<span class="bg-elem logo delay-' + randomDelay + '">' + emoji + '</span>'
+      : '<span class="bg-elem delay-' + randomDelay + '">' + emoji + '</span>'
+  }).join('')
+}
+
 export default function () {
-  let emojiCounter = 0
   const content = Array(50).fill().map((_, i) => {
-    return emojisMap.map((emoji) => {
-      emojiCounter++
-      return flatLogoSegments.indexOf(emojiCounter) !== -1
-        ? '<span class="logo-segment">' + emoji + '</span>'
-        : emoji
-    }).join('')
+    let emojiCounter = emojisMap.length * i
+    return `<div class="bg-row">${renderEmojis(shuffle(emojisMap), emojiCounter)}</div>`
   }).join('')
   return {
     '__html': content
