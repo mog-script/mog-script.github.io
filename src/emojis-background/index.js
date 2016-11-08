@@ -47,7 +47,7 @@ const renderEmojis = (emojisArray, currentCounter) => {
 }
 
 export default function () {
-  const content = Array(50).fill().map((_, i) => {
+  const content = Array(40).fill().map((_, i) => {
     let emojiCounter = emojisMap.length * i
     return `<div class="bg-row">${renderEmojis(shuffle(emojisMap), emojiCounter)}</div>`
   }).join('')
