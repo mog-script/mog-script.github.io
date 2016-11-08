@@ -24,7 +24,7 @@ export default class SideBySide extends Component {
   render () {
     const {javascript, mogscript} = this.state
 
-    return <div>
+    return <div className='code-editor-container'>
       <Codemirror
         className='code-editor'
         options={{ ...codeEditorConfig, readOnly: false }}
